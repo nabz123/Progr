@@ -59,7 +59,7 @@ namespace Assignment
             Console.WriteLine("   \\ \\/  \\/ / | '_ \\ / _ \\  \\ \\ /\\ / / _` | '_ \\| __/ __| | __/ _ \\  | '_ \\ / _ \\  / _` | | |\\/| | | | | |/ _ \\| '_ \\ / _` | | '__/ _ \\   / / ");
             Console.WriteLine("    \\  /\\  /  | | | | (_) |  \\ V  V / (_| | | | | |_\\__ \\ | || (_) | | |_) |  __/ | (_| | | |  | | | | | | (_) | | | | (_| | | | |  __/  |_|  ");
             Console.WriteLine("     \\/  \\/   |_| |_|\\___/    \\_/\\_/ \\__,_|_| |_|\\__|___/  \\__\\___/  |_.__/ \\___|  \\__,_| |_|  |_|_|_|_|_|\\___/|_| |_|\\__,_|_|_|  \\___|  (_)  ");
-            Thread.Sleep(5);
+            Thread.Sleep(5000);
             Console.Clear();
         }
         public static void read(names[] Lastname)
@@ -248,15 +248,15 @@ namespace Assignment
             } while (intt < 10);
             Console.ReadLine();
         }
-        public static void finalists()
+        public static void finalists(names[] Lastname)
         {
             Lotto();
 
             for (int i = 0; i < 10; i++)
             {
-                //Console.WriteLine($"{finalists[i].fname}");
-                //Console.WriteLine($"{finalists[i].lname}");
-                //Console.WriteLine($"{finalists[i].inter}");
+                Console.WriteLine($"{finalists[i].fname}");
+                Console.WriteLine($"{finalists[i].lname}");
+                Console.WriteLine($"{finalists[i].inter}");
             }
 
         }
