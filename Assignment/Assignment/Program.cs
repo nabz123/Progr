@@ -18,23 +18,23 @@ namespace Assignment
     {
         static void Main(string[] args)
         {
+            Console.SetWindowSize(160, 40);
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             names[] Lastname = new names[30];
+            //finalists[] final = new finalists[10];
             welcome();
             read(Lastname);
             sort(Lastname);
             Greeting();
             options();
             witch(Lastname);
-            
-            
-            
-            
             Lotto();
             Console.ReadLine();
         }
         public static void welcome()
         {
+            
+            
             Console.WriteLine("                            ___  _                       _____      _       _            _           _      ");
             Console.WriteLine("                           / __\\ | |                    |  __ \\    | |     | |          | |         (_)     ");
             Console.WriteLine("                          | |  | | |_ __ _  __ _  ___   | |__) |__ | |_   _| |_ ___  ___| |__  _ __  _  ___ ");
@@ -59,7 +59,7 @@ namespace Assignment
             Console.WriteLine("   \\ \\/  \\/ / | '_ \\ / _ \\  \\ \\ /\\ / / _` | '_ \\| __/ __| | __/ _ \\  | '_ \\ / _ \\  / _` | | |\\/| | | | | |/ _ \\| '_ \\ / _` | | '__/ _ \\   / / ");
             Console.WriteLine("    \\  /\\  /  | | | | (_) |  \\ V  V / (_| | | | | |_\\__ \\ | || (_) | | |_) |  __/ | (_| | | |  | | | | | | (_) | | | | (_| | | | |  __/  |_|  ");
             Console.WriteLine("     \\/  \\/   |_| |_|\\___/    \\_/\\_/ \\__,_|_| |_|\\__|___/  \\__\\___/  |_.__/ \\___|  \\__,_| |_|  |_|_|_|_|_|\\___/|_| |_|\\__,_|_|_|  \\___|  (_)  ");
-            Thread.Sleep(5000);
+            Thread.Sleep(5);
             Console.Clear();
         }
         public static void read(names[] Lastname)
@@ -84,7 +84,6 @@ namespace Assignment
                     if (Lastname[pos + 1].lname.CompareTo(Lastname[pos].lname) < 0)
                     {
                         names temp = Lastname[pos + 1];
-
                         Lastname[pos + 1] = Lastname[pos];
                         Lastname[pos] = temp;
                     }
@@ -103,21 +102,30 @@ namespace Assignment
         public static void edit(names[] Lastname)
         {
             bool found = false;
-            Console.WriteLine("Who's interests would you like to change?");
-            string edit = Console.ReadLine();
-            for (int i = 0; i < Lastname.Length; i++)
+            while (found==false)
             {
-                if (Lastname[i].lname == edit)
+                Console.Clear();
+                display(Lastname);
+                
+                Console.WriteLine("Who's interests would you like to change?");
+                string edit = Console.ReadLine();
+                for (int i = 0; i < Lastname.Length; i++)
                 {
-                    Console.WriteLine("What would you like to change it to?:");
-                    Lastname[i].inter = Console.ReadLine();
-                    found = true;
+                    if (Lastname[i].lname == edit)
+                    {
+                        Console.WriteLine("What would you like to change it to?:");
+                        Lastname[i].inter = Console.ReadLine();
+                        found = true;
+                    }
                 }
+                if (found == false)
+                {
+                    Console.WriteLine("Person not found");
+                    Console.ReadLine();
+                }
+                Console.Clear();
             }
-            if (found == false)
-            {
-                Console.WriteLine("Person not found");
-            }
+            
         }
         public static void display2(names[] Lastname)
         {
@@ -158,25 +166,24 @@ namespace Assignment
             Console.WriteLine("Contestants Names");
             display(Lastname);
             Console.ReadLine();
-            
         }
         public static void Edit(names[] Lastname)
         {
             Console.WriteLine("Edit Contestants");
-            display(Lastname);
             
+            display(Lastname);
             edit(Lastname);
             display2(Lastname);
             Console.ReadLine();
         }
-        public static void task3()
+        public static void Insructions()
         {
-            Console.WriteLine("This is task 3");
+            Console.WriteLine("These are the instructions");
             Console.ReadLine();
         }
-        public static void task4()
+        public static void Game()
         {
-            Console.WriteLine("This is task 4");
+            Console.WriteLine("Welcome to the game");
             Console.ReadLine();
         }
         public static void exit()
@@ -185,26 +192,39 @@ namespace Assignment
             Console.ReadLine();
         }
         public static void options()
-        {
-            Console.WriteLine("1 Contestants Names");
-            Console.WriteLine("2 Edit Contestants");
-            Console.WriteLine("3 Task 3");
-            Console.WriteLine("4 Task 4");
-            Console.WriteLine("0 Exit Menu");
+        {   
+            Console.WriteLine("");
+            Console.WriteLine("1)  Contestants Names".PadLeft(40));
+            Console.WriteLine("");
+            Console.WriteLine("2)  Edit Contestants".PadLeft(39));
+            Console.WriteLine("");
+            Console.WriteLine("3)  Instructions".PadLeft(35));
+            Console.WriteLine("");
+            Console.WriteLine("4)  Play Game".PadLeft(32));
+            Console.WriteLine("");
+            Console.WriteLine("0)  Exit Game".PadLeft(32));
         }
         public static void witch(names[] Lastname)
         {
             int intt;
-            string tmep;
+            string temp;
             do
             {
                 Console.Clear();
+                Console.WriteLine("");
+                Console.WriteLine(" __          ___                                 _         _          _                    __  __ _ _ _ _                   _            ___  ");
+                Console.WriteLine(" \\ \\        / / |                               | |       | |        | |                  |  \\/  (_) | (_)                 (_)          |__ \\ ");
+                Console.WriteLine("  \\ \\  /\\  / /| |__   ___   __      ____ _ _ __ | |_ ___  | |_ ___   | |__   ___    __ _  | \\  / |_| | |_  ___  _ __   __ _ _ _ __ ___     ) |");
+                Console.WriteLine("   \\ \\/  \\/ / | '_ \\ / _ \\  \\ \\ /\\ / / _` | '_ \\| __/ __| | __/ _ \\  | '_ \\ / _ \\  / _` | | |\\/| | | | | |/ _ \\| '_ \\ / _` | | '__/ _ \\   / / ");
+                Console.WriteLine("    \\  /\\  /  | | | | (_) |  \\ V  V / (_| | | | | |_\\__ \\ | || (_) | | |_) |  __/ | (_| | | |  | | | | | | (_) | | | | (_| | | | |  __/  |_|  ");
+                Console.WriteLine("     \\/  \\/   |_| |_|\\___/    \\_/\\_/ \\__,_|_| |_|\\__|___/  \\__\\___/  |_.__/ \\___|  \\__,_| |_|  |_|_|_|_|_|\\___/|_| |_|\\__,_|_|_|  \\___|  (_)  ");
+                Console.WriteLine("");
+                Console.WriteLine("Please choose a menu: ".PadLeft(41));
+                
                 options();
-                Console.WriteLine("Please choose a menu: ");
-                tmep = Console.ReadLine();
-                intt = Convert.ToInt32(tmep);
+                temp = Console.ReadLine();
+                intt = Convert.ToInt32(temp);
                 Console.Clear();
-
                 switch (intt)
                 {
                     case 1:
@@ -214,18 +234,28 @@ namespace Assignment
                         Edit(Lastname);
                         break;
                     case 3:
-                        task3();
+                        Insructions();
                         break;
                     case 4:
-                        task4();
+                        Game();
                         break;
                     case 0:
                         exit();
                         break;
-
                 }
             } while (intt < 10);
             Console.ReadLine();
+        }
+        public static void finalists()
+        {
+            Lotto();
+
+            for (int i = 0; i < 10; i++)
+            {
+                //Console.WriteLine($"{finalists[i].fname}");
+                //Console.WriteLine($"{finalists[i].lname}");
+                //Console.WriteLine($"{finalists[i].inter}");
+            }
 
         }
     }
