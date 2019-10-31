@@ -240,7 +240,9 @@ namespace Assignment
                         Game();
                         break;
                     case 0:
-                        exit();
+                        Console.WriteLine("Thank you for playing");
+                        Thread.Sleep(2500);
+                        Environment.Exit(-1);
                         break;
                 }
             } while (intt < 10);
