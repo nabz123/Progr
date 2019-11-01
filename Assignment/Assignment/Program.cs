@@ -251,6 +251,7 @@ namespace Assignment
         public static void finalists(names[] Lastname)
         {
             Lotto();
+            int[] finalists = new finalists[10];
 
             for (int i = 0; i < 10; i++)
             {
