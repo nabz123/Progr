@@ -14,12 +14,16 @@ namespace Assignment
         public string lname;
         public string inter;
     }
+
     class Program
     {
+
         static void Main(string[] args)
         {
             Console.SetWindowSize(160, 40);
             Console.OutputEncoding = System.Text.Encoding.UTF8;
+            string[] Finalll = new string[1];
+            string[] Finalists = new string[10];
             names[] Lastname = new names[30];
             //finalists[] final = new finalists[10];
             welcome();
@@ -27,14 +31,14 @@ namespace Assignment
             sort(Lastname);
             Greeting();
             options();
-            witch(Lastname);
-            Lotto();
+            menu(Lastname, Finalists,Finalll);
+            Lotto(Lastname, Finalists);
             Console.ReadLine();
         }
         public static void welcome()
         {
-            
-            
+
+
             Console.WriteLine("                            ___  _                       _____      _       _            _           _      ");
             Console.WriteLine("                           / __\\ | |                    |  __ \\    | |     | |          | |         (_)     ");
             Console.WriteLine("                          | |  | | |_ __ _  __ _  ___   | |__) |__ | |_   _| |_ ___  ___| |__  _ __  _  ___ ");
@@ -59,7 +63,7 @@ namespace Assignment
             Console.WriteLine("   \\ \\/  \\/ / | '_ \\ / _ \\  \\ \\ /\\ / / _` | '_ \\| __/ __| | __/ _ \\  | '_ \\ / _ \\  / _` | | |\\/| | | | | |/ _ \\| '_ \\ / _` | | '__/ _ \\   / / ");
             Console.WriteLine("    \\  /\\  /  | | | | (_) |  \\ V  V / (_| | | | | |_\\__ \\ | || (_) | | |_) |  __/ | (_| | | |  | | | | | | (_) | | | | (_| | | | |  __/  |_|  ");
             Console.WriteLine("     \\/  \\/   |_| |_|\\___/    \\_/\\_/ \\__,_|_| |_|\\__|___/  \\__\\___/  |_.__/ \\___|  \\__,_| |_|  |_|_|_|_|_|\\___/|_| |_|\\__,_|_|_|  \\___|  (_)  ");
-            Thread.Sleep(5000);
+            Thread.Sleep(1);
             Console.Clear();
         }
         public static void read(names[] Lastname)
@@ -102,11 +106,11 @@ namespace Assignment
         public static void edit(names[] Lastname)
         {
             bool found = false;
-            while (found==false)
+            while (found == false)
             {
                 Console.Clear();
                 display(Lastname);
-                
+
                 Console.WriteLine("Who's interests would you like to change?");
                 string edit = Console.ReadLine();
                 for (int i = 0; i < Lastname.Length; i++)
@@ -125,7 +129,7 @@ namespace Assignment
                 }
                 Console.Clear();
             }
-            
+
         }
         public static void display2(names[] Lastname)
         {
@@ -136,26 +140,7 @@ namespace Assignment
                 Console.WriteLine($"{Lastname[i].inter}");
             }
         }
-        public static void Lotto()
-        {
-            Random Rand = new Random();
-            int[] Lottoo = new int[10];
 
-            for (int i = 0; i < Lottoo.Length; i++)
-            {
-                Lottoo[i] = -1;
-            }
-            int lot = Rand.Next(0, 30);
-            for (int i = 0; i < Lottoo.Length; i++)
-            {
-                while (Lottoo.Contains(lot))
-                {
-                    lot = Rand.Next(0, 30);
-                }
-                Lottoo[i] = lot;
-                Console.WriteLine(Lottoo[i]);
-            }
-        }
         public static void Greeting()
         {
             Console.WriteLine("Welcome to the menu");
@@ -170,7 +155,6 @@ namespace Assignment
         public static void Edit(names[] Lastname)
         {
             Console.WriteLine("Edit Contestants");
-            
             display(Lastname);
             edit(Lastname);
             display2(Lastname);
@@ -181,46 +165,45 @@ namespace Assignment
             Console.WriteLine("These are the instructions");
             Console.ReadLine();
         }
-        public static void Game()
+        public static void Game(names[] Lastname, string[] Finalists, string[] Finalll)
         {
-            Console.WriteLine("Welcome to the game");
+            Console.WriteLine("These are your top 10 finalists");
+            Lotto(Lastname, Finalists);
+            Thread.Sleep(5000);
+            Console.Clear();
+            Console.WriteLine("And your finalist is");
+            Finallll(Lastname, Finalists);
             Console.ReadLine();
         }
         public static void exit()
         {
-            Console.WriteLine("Exit menu");
+            Console.WriteLine("Thank you for playing");
             Console.ReadLine();
         }
         public static void options()
-        {   
-            Console.WriteLine("");
-            Console.WriteLine("1)  Contestants Names".PadLeft(40));
-            Console.WriteLine("");
-            Console.WriteLine("2)  Edit Contestants".PadLeft(39));
-            Console.WriteLine("");
-            Console.WriteLine("3)  Instructions".PadLeft(35));
-            Console.WriteLine("");
-            Console.WriteLine("4)  Play Game".PadLeft(32));
-            Console.WriteLine("");
-            Console.WriteLine("0)  Exit Game".PadLeft(32));
-        }
-        public static void witch(names[] Lastname)
         {
-            int intt;
+            Console.WriteLine("");
+            Console.WriteLine("\t\t\t\t   1)  Contestants\n");
+            //Console.WriteLine("");
+            Console.WriteLine("\t\t\t\t   2)  Edit Contestants");
+            Console.WriteLine("");
+            Console.WriteLine("\t\t\t\t   3)  Instructions");
+            Console.WriteLine("");
+            Console.WriteLine("\t\t\t\t   4)  Play Game");
+            Console.WriteLine("");
+            Console.WriteLine("\t\t\t\t   0)  Exit Game");
+            Console.Write("\n\t\t\t\t  :");
+        }
+        public static void menu(names[] Lastname, string[] Finalists, string[] Finalll)
+        {
+            int intt, count = 0;
             string temp;
             do
             {
                 Console.Clear();
                 Console.WriteLine("");
-                Console.WriteLine(" __          ___                                 _         _          _                    __  __ _ _ _ _                   _            ___  ");
-                Console.WriteLine(" \\ \\        / / |                               | |       | |        | |                  |  \\/  (_) | (_)                 (_)          |__ \\ ");
-                Console.WriteLine("  \\ \\  /\\  / /| |__   ___   __      ____ _ _ __ | |_ ___  | |_ ___   | |__   ___    __ _  | \\  / |_| | |_  ___  _ __   __ _ _ _ __ ___     ) |");
-                Console.WriteLine("   \\ \\/  \\/ / | '_ \\ / _ \\  \\ \\ /\\ / / _` | '_ \\| __/ __| | __/ _ \\  | '_ \\ / _ \\  / _` | | |\\/| | | | | |/ _ \\| '_ \\ / _` | | '__/ _ \\   / / ");
-                Console.WriteLine("    \\  /\\  /  | | | | (_) |  \\ V  V / (_| | | | | |_\\__ \\ | || (_) | | |_) |  __/ | (_| | | |  | | | | | | (_) | | | | (_| | | | |  __/  |_|  ");
-                Console.WriteLine("     \\/  \\/   |_| |_|\\___/    \\_/\\_/ \\__,_|_| |_|\\__|___/  \\__\\___/  |_.__/ \\___|  \\__,_| |_|  |_|_|_|_|_|\\___/|_| |_|\\__,_|_|_|  \\___|  (_)  ");
                 Console.WriteLine("");
-                Console.WriteLine("Please choose a menu: ".PadLeft(41));
-                
+                Console.WriteLine("\t\t\t\tWho wants to be a millionare\n");
                 options();
                 temp = Console.ReadLine();
                 intt = Convert.ToInt32(temp);
@@ -237,7 +220,7 @@ namespace Assignment
                         Insructions();
                         break;
                     case 4:
-                        Game();
+                        Game(Lastname, Finalists, Finalll);
                         break;
                     case 0:
                         Console.WriteLine("Thank you for playing");
@@ -245,22 +228,50 @@ namespace Assignment
                         Environment.Exit(-1);
                         break;
                 }
-            } while (intt < 10);
+            } while (count != 1);
             Console.ReadLine();
         }
-        public static void finalists(names[] Lastname)
+        public static void Lotto(names[] Lastname, string[] Finalists)
         {
-            Lotto();
-            int[] finalists = new finalists[10];
+            Random Rand = new Random();
+            int[] finalists = new int[10];
 
+            for (int i = 0; i < finalists.Length; i++)
+            {
+                finalists[i] = -1;
+            }
+            int lot = Rand.Next(0, 30);
             for (int i = 0; i < 10; i++)
             {
-                Console.WriteLine($"{finalists[i].fname}");
-                Console.WriteLine($"{finalists[i].lname}");
-                Console.WriteLine($"{finalists[i].inter}");
+                lot = Rand.Next(30);
+                Console.WriteLine(Lastname[lot].fname);
+                Finalists[i] = Lastname[lot].fname;
             }
-
         }
+        public static void Finallll(names[] Lastname, string[] Finalists)
+        {
+            Random Rand = new Random();
+            int[] finalists = new int[10];
+
+            for (int i = 0; i < finalists.Length; i++)
+            {
+                finalists[i] = -1;
+            }
+            int lot = Rand.Next(0, 30);
+            for (int i = 0; i < 10; i++)
+            {
+                lot = Rand.Next(30);
+                Finalists[i] = Lastname[lot].fname;
+            }
+            for (int i = 0; i < 1; i++)
+            {
+                lot = Rand.Next(30);
+                Console.WriteLine(Lastname[lot].fname);
+                Finalists[i] = Lastname[lot].fname;
+            }
+        }
+        
+        
+        
     }
-     
 }
