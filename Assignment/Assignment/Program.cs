@@ -175,6 +175,7 @@ namespace Assignment
             Console.Clear();
             Console.WriteLine("And your finalist is");
             Finallll(Lastname, Finalists);
+            Questions(Lastname, Finalists, Finalll);
             Console.ReadLine();
         }
         public static void exit()
@@ -312,7 +313,7 @@ namespace Assignment
             //Console.WriteLine(Lastname[lot].fname);
             Console.WriteLine($"{Lastname[lot].fname} {Lastname[lot].lname} ");
         }*/
-        public static void Questions()
+        public static void Questions(names[] Lastname, string[] Finalists, string[] Finalll)
         {
             //Console.WriteLine(" A \n B \n C \n D \n");
             int count = 0;
@@ -368,7 +369,7 @@ namespace Assignment
                             Console.Clear();
                             Console.WriteLine(" Question 5");
                             Console.WriteLine(" On which river does the Austrian city of Vienna stand?");
-                            Console.WriteLine(" A \n B \n C \n D \n");
+                            Console.WriteLine(" A Danube \n B Rhine \n C Rhone \n D Weser \n");
                             q5 = Console.ReadLine();
                             q5.ToLower();
                             if (q5.Contains("a"))
@@ -380,7 +381,7 @@ namespace Assignment
                                 Console.Clear();
                                 Console.WriteLine(" Question 6");
                                 Console.WriteLine(" What Poisitive electrode called, in an electrolytic cell?");
-                                Console.WriteLine(" A \n B \n C \n D \n");
+                                Console.WriteLine(" A cathode \n B triode \n C diode \n D anode  \n");
                                 q6 = Console.ReadLine();
                                 q6.ToLower();
                                 if (q6.Contains("d"))
@@ -392,7 +393,7 @@ namespace Assignment
                                     Console.Clear();
                                     Console.WriteLine(" Question 7");
                                     Console.WriteLine(" Which of these colours does not appear on the national flag of Lithuania?");
-                                    Console.WriteLine(" A \n B \n C \n D \n");
+                                    Console.WriteLine(" A blue \n B red \n C yellow \n D green \n");
                                     q7 = Console.ReadLine();
                                     q7.ToLower();
                                     if (q7.Contains("b"))
@@ -405,6 +406,7 @@ namespace Assignment
                                     }
                                 }
                             }
+                            
                         }
 
                     }
