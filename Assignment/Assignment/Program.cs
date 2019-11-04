@@ -312,6 +312,106 @@ namespace Assignment
             //Console.WriteLine(Lastname[lot].fname);
             Console.WriteLine($"{Lastname[lot].fname} {Lastname[lot].lname} ");
         }*/
+        public static void Questions()
+        {
+            //Console.WriteLine(" A \n B \n C \n D \n");
+            int count = 0;
+            string q1, q2, q3, q4, q5, q6, q7, q8, q9, q10, q11, q12;
+            Console.WriteLine(" Question 1");
+            Console.WriteLine("Who won the FIFA World Cup in 2010");
+            Console.WriteLine(" A Spain \n B Germany \n C Brazil \n D England ");
+            q1 = Console.ReadLine();
+            q1.ToLower();
+            if (q1.Contains("b"))
+            {
+                Console.WriteLine("Correct answer");
+                count = 50;
+                Console.WriteLine(count);
+                Thread.Sleep(1000);
+                Console.Clear();
+                Console.WriteLine(" Question 2");
+                Console.WriteLine("In what year was the Burj Khalifa officially open ");
+                Console.WriteLine(" A 2011 \n B 2010 \n C 2009 \n D 2008 \n");
+                q2 = Console.ReadLine();
+                q2.ToLower();
 
+                if (q2.Contains("b"))
+                {
+                    Console.WriteLine("Correct answer");
+                    count = 100;
+                    Console.WriteLine(count);
+                    Thread.Sleep(1000);
+                    Console.Clear();
+                    Console.WriteLine(" Question 3");
+                    Console.WriteLine("Which of these symptoms can happen if you’re depressed?");
+                    Console.WriteLine(" A Don’t feel hungry \n B Hungry all the time \n C Always tired \n D Any of above \n");
+                    q3 = Console.ReadLine();
+                    q3.ToLower();
+                    if (q3.Contains("d"))
+                    {
+                        Console.WriteLine(" Correct answer");
+                        count = 200;
+                        Console.WriteLine(count);
+                        Thread.Sleep(1000);
+                        Console.Clear();
+                        Console.WriteLine(" Question 4");
+                        Console.WriteLine(" In early 1998, an American tourist couple mysteriously disappeared after being left behind where?");
+                        Console.WriteLine(" A New Zealand \n B Hanging Rock \n C Great Barrier Reef \n D Uluru \n");
+                        q4 = Console.ReadLine();
+                        q4.ToLower();
+                        if (q4.Contains("c"))
+                        {
+                            Console.WriteLine(" Correct answer");
+                            count = 500;
+                            Console.WriteLine(count);
+                            Thread.Sleep(1000);
+                            Console.Clear();
+                            Console.WriteLine(" Question 5");
+                            Console.WriteLine(" On which river does the Austrian city of Vienna stand?");
+                            Console.WriteLine(" A \n B \n C \n D \n");
+                            q5 = Console.ReadLine();
+                            q5.ToLower();
+                            if (q5.Contains("a"))
+                            {
+                                Console.WriteLine(" Correct answer");
+                                count = 1000;
+                                Console.WriteLine(count);
+                                Thread.Sleep(1000);
+                                Console.Clear();
+                                Console.WriteLine(" Question 6");
+                                Console.WriteLine(" What Poisitive electrode called, in an electrolytic cell?");
+                                Console.WriteLine(" A \n B \n C \n D \n");
+                                q6 = Console.ReadLine();
+                                q6.ToLower();
+                                if (q6.Contains("d"))
+                                {
+                                    Console.WriteLine(" Correct answer");
+                                    count = 2500;
+                                    Console.WriteLine(count);
+                                    Thread.Sleep(1000);
+                                    Console.Clear();
+                                    Console.WriteLine(" Question 7");
+                                    Console.WriteLine(" Which of these colours does not appear on the national flag of Lithuania?");
+                                    Console.WriteLine(" A \n B \n C \n D \n");
+                                    q7 = Console.ReadLine();
+                                    q7.ToLower();
+                                    if (q7.Contains("b"))
+                                    {
+                                        Console.WriteLine(" Correct answer");
+                                        count = 10000;
+                                        Console.WriteLine(count);
+                                        Thread.Sleep(1000);
+                                        Console.Clear();
+                                    }
+                                }
+                            }
+                        }
+
+                    }
+                }
+            }
+        }
+        
+        
     }
 }
