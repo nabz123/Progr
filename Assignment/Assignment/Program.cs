@@ -24,6 +24,7 @@ namespace Assignment
             Console.OutputEncoding = System.Text.Encoding.UTF8;
             string[] Finalll = new string[1];
             string[] Finalists = new string[10];
+            string[] Finaly = new string[10];
             names[] Lastname = new names[30];
             //finalists[] final = new finalists[10];
             welcome();
@@ -167,6 +168,7 @@ namespace Assignment
         }
         public static void Game(names[] Lastname, string[] Finalists, string[] Finalll)
         {
+            Finaly(Lastname, Finalists);
             Console.WriteLine("These are your top 10 finalists");
             Lotto(Lastname, Finalists);
             Thread.Sleep(5000);
@@ -241,12 +243,20 @@ namespace Assignment
                 finalists[i] = -1;
             }
             int lot = Rand.Next(0, 30);
-            for (int i = 0; i < 10; i++)
+            for (int i = 0; i < finalists.Length; i++)
             {
-                lot = Rand.Next(30);
-                Console.WriteLine(Lastname[lot].fname);
+                while (finalists.Contains(lot))
+                {
+                    lot = Rand.Next(0,30);
+                }
+                finalists[i] = -1;
                 Finalists[i] = Lastname[lot].fname;
             }
+            //Console.Write(Lastname[lot].lname);
+            //Console.WriteLine(Lastname[lot].fname);
+            Console.WriteLine($"{Lastname[lot].lname} {Lastname[lot].fname} ");
+
+
         }
         public static void Finallll(names[] Lastname, string[] Finalists)
         {
@@ -270,8 +280,25 @@ namespace Assignment
                 Finalists[i] = Lastname[lot].fname;
             }
         }
+        public static void Finaly(names[] Lastname, string[] Finalists)
+        {
+            Random Rand = new Random();
+            int[] finalists = new int[10];
+            for (int i = 0; i < finalists.Length; i++)
+            {
+                finalists[i] = Rand.Next(30);
+                for (int j = 0; j < i; j++)
+                {
+                    if (finalists[j]== finalists[i])
+                    {
+                        finalists[i] = Rand.Next(0, 30);
+                        j = -1;
+                    }
+                }
+            }
+            Console.WriteLine(finalists);
+        }
         
-        
-        
+
     }
 }
