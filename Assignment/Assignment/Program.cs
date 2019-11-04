@@ -168,7 +168,7 @@ namespace Assignment
         }
         public static void Game(names[] Lastname, string[] Finalists, string[] Finalll)
         {
-            Finaly(Lastname, Finalists);
+            //Finaly(Lastname, Finalists);
             Console.WriteLine("These are your top 10 finalists");
             Lotto(Lastname, Finalists);
             Thread.Sleep(5000);
@@ -235,34 +235,26 @@ namespace Assignment
         }
         public static void Lotto(names[] Lastname, string[] Finalists)
         {
-            Random Rand = new Random();
-            int[] finalists = new int[10];
-
-            for (int i = 0; i < finalists.Length; i++)
             {
-                finalists[i] = -1;
-            }
-            int lot = Rand.Next(0, 30);
-            for (int i = 0; i < finalists.Length; i++)
-            {
-                while (finalists.Contains(lot))
+                Random Rand = new Random();
+                int[] finalists = new int[10];
+                for (int i = 0; i < finalists.Length; i++)
                 {
-                    lot = Rand.Next(0,30);
+                    finalists[i] = -1;
                 }
-                finalists[i] = -1;
-                Finalists[i] = Lastname[lot].fname;
+                int lot = Rand.Next(0, 30);
+                for (int i = 0; i < 10; i++)
+                {
+                    lot = Rand.Next(30);
+                    Finalists[i] = Lastname[lot].fname;
+                    Console.WriteLine(Lastname[lot].fname);
+                }
             }
-            //Console.Write(Lastname[lot].lname);
-            //Console.WriteLine(Lastname[lot].fname);
-            Console.WriteLine($"{Lastname[lot].lname} {Lastname[lot].fname} ");
-
-
         }
         public static void Finallll(names[] Lastname, string[] Finalists)
         {
             Random Rand = new Random();
             int[] finalists = new int[10];
-
             for (int i = 0; i < finalists.Length; i++)
             {
                 finalists[i] = -1;
@@ -280,7 +272,7 @@ namespace Assignment
                 Finalists[i] = Lastname[lot].fname;
             }
         }
-        public static void Finaly(names[] Lastname, string[] Finalists)
+        /*public static void Finaly(names[] Lastname, string[] Finalists)
         {
             Random Rand = new Random();
             int[] finalists = new int[10];
@@ -298,7 +290,28 @@ namespace Assignment
             }
             Console.WriteLine(finalists);
         }
-        
+        public static void Lotto(names[] Lastname, string[] Finalists)
+        {
+            Random Rand = new Random();
+            int[] finalists = new int[10];
+            for (int i = 0; i < finalists.Length; i++)
+            {
+                finalists[i] = -1;
+            }
+            int lot = Rand.Next(0, 30);
+            for (int i = 0; i < finalists.Length; i++)
+            {
+                while (finalists.Contains(lot))
+                {
+                    lot = Rand.Next(0, 30);
+                }
+                finalists[i] = -1;
+                Finalists[i] = Lastname[lot].fname;
+            }
+            //Console.Write(Lastname[lot].lname);
+            //Console.WriteLine(Lastname[lot].fname);
+            Console.WriteLine($"{Lastname[lot].fname} {Lastname[lot].lname} ");
+        }*/
 
     }
 }
